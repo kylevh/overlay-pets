@@ -1,0 +1,121 @@
+{
+  "manifest_version": 1,
+  "type": "WebApp",
+  "meta": {
+    "name": "OVERLAY PETS V1",
+    "author": "OZP STUDIO",
+    "version": "0.1",
+    "minimum-overwolf-version": "0.160.0",
+    "description": "Kyle's description",
+    "dock_button_title": "OVERLAY PETS",
+    "icon": "icons/IconMouseOver.png",
+    "icon_gray": "icons/IconMouseNormal.png",
+    "launcher_icon": "icons/desktop-icon.ico",
+    "window_icon": "icons/IconMouseOver.png"
+  },
+  "permissions": [
+    "Hotkeys",
+    "GameInfo"
+  ],
+  "data": {
+    "start_window": "background",
+    "hotkeys": {
+      "overlay_pets_showhide": {
+        "title": "Show/Hide In-Game Window",
+        "action-type": "toggle",
+        "default": "Ctrl+F"
+      },
+      "tab_pressed": {
+        "title": "Tab Pressed In-Game",
+        "action-type": "custom",
+        "default": "Shift+F9",
+        "passthrough": true,
+        "hold": true
+      }
+    },
+    "protocol_override_domains": {
+      "googlesyndication": "http"
+    },
+    "externally_connectable": {
+      "matches": [
+        "http://*.overwolf.com",
+        "https://*.overwolf.com",
+        "https://*.google-analytics.com",
+        "http://*.google-analytics.com",
+        "https://www.googleapis.com"
+      ]
+    },
+    "force_browser": "user",
+    "windows": {
+      "background": {
+        "file": "background.html",
+        "background_optimization": false,
+        "is_background_page": true
+      },
+      "desktop": {
+        "file": "desktop.html",
+        "desktop_only": true,
+        "native_window": true,
+        "resizable": true,
+        "transparent": true,
+        "override_on_update": true,
+        "size": {
+          "width": 400,
+          "height": 200
+        },
+        "min_size": {
+          "width": 400,
+          "height": 200
+        }
+      },
+      "in_game": {
+        "file": "in_game.html",
+        "in_game_only": true,
+        "resizable": false,
+        "transparent": true,
+        "override_on_update": true,
+        "start_position": {
+          "top": 100,
+          "left": 100
+        },
+        "max_size": {
+          "width": 300,
+          "height": 200
+        },
+        "size": {
+          "width": 300,
+          "height": 200
+        },
+        "min_size": {
+          "width": 300,
+          "height": 200
+        }
+      }
+    },
+    "game_targeting": {
+      "type": "dedicated",
+      "game_ids": [
+        21640 
+      ]
+    },
+    "game_events": [
+      21640
+    ],
+    "launch_events": [
+      {
+        "event": "GameLaunch",
+        "event_data": {
+          "game_ids": [
+            21640
+          ]
+        },
+        "start_minimized": true
+      }
+    ],
+    "developer": {
+      "enable_auto_refresh": true,
+      "reload_delay": 1000,
+      "filter": "*.*"
+    }
+  }
+}

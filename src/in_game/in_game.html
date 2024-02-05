@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="stylesheet" href="../../css/header.css" /> -->
+  <link rel="stylesheet" href="../../css/output.css" >
+  <link rel="stylesheet" href="../../css/petingame.css" />
+  <title>Overlay Pets - In-Game Page</title>
+</head>
+<body class="in-game">
+  <!-- -------------------------------- Header ------------------------------- -->
+  <!-- <header id="header" class="min-w-screen bg-[#272727] h-8 flex items-center z-[9999]">
+    <h1 class="pl-2 m-0 text-sm">>In-game Pet</h1>
+    <h1 class="pl-2 ml-auto text-sm">
+      Show/Hide Hotkey:
+      <kbd id="hotkey"></kbd>
+    </h1>
+    <div class="px-2 ml-auto text-sm">
+      <button id="minimizeButton" class="window-control window-control-minimize" />
+      <button id="maximizeButton" class="window-control window-control-maximize" />
+      <button id="closeButton" class="window-control window-control-close" />
+    </div>
+  </header> -->
+ 
+  <!-- --------------------------------- Main -------------------------------- -->
+  <main id="" class="bg-transparent max-h-screen flex flex-col justify-center" >
+    <div id="header"  class="min-w-screen bg-[#272727] h-8 flex items-center z-[9999]" id="header">
+      <h1 class="pl-2 m-0 text-sm">In-Game Window</h1>
+      <h1 id="hotkey" class="pl-2 ml-auto text-sm">Middle</h1>
+      <h1 class="px-2 ml-auto text-sm">
+        <div id="minimizeButton" ></div>
+        <div id="maximizeButton" ></div>
+        <div id="closeButton" ></div>
+      </h1>
+      
+    </div>
+
+    <div class="bg-white h-52 flex flex-col items-center justify-between">
+      <div class="flex-none">
+        <h1 id="pokemonName"></h1>
+      </div>
+      <div id="Character" class="flex-grow h-full items-center justify-center">
+        <img class="w-24" src="/game/sprites/wooper_idle.gif" alt="gif">
+      </div>
+      <div class="w-full flex justify-between">
+        <button class="w-14 h-14 bg-blue-500">TEST</button>
+        <button class="w-14 h-14 bg-green-500">TEST2</button>
+      </div>
+    </div>
+  </main>
+ 
+  <!-- <main class="bg-red-700 text-red">
+    <div class="bg-red-700" id="logs">
+      <div class="bg-red-700"  id="events" class="">
+        <h1>Game Events</h1>
+        <div id="eventsLog" class="">
+        </div>
+      </div>
+      <div id="infoUpdates" class="">
+        <h1>Info Updates</h1>
+        <div id="infoLog" class=""></div>
+      </div> 
+    </div>
+    <div id="other">
+      <h1>Real-time Game Data</h1>
+      <p id="infoParagraph">
+        The background controller of this app is listening to all the game
+        events and info updates, and sends them to this window, that prints
+        them to the screen. Some specific events (Match Start/End, Kill and
+        Death) are painted in <span style="color: #00DEFA">teal</span> and
+        logged to the developers console.
+      </p>
+    </div> 
+  </main> -->
+
+  <script>
+    // Standard Google Universal Analytics code
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      },
+        i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      // Note: https protocol here
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-144253676-3', 'auto');
+
+    // Removes failing protocol check. @see: http://stackoverflow.com/a/22152353/1958200
+    ga('set', 'checkProtocolTask', function () { });
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview', '/in_game.html');
+  </script>
+</body>
+</html>
